@@ -1,3 +1,3 @@
- I will utilize this repository to store LeetCode SQL Easy problems that I have completed. 
+ I will utilize this repository to store LeetCode SQL problems that I have completed. 
  
  
