@@ -1,0 +1,66 @@
++-------------+---------+
+| Column Name | Type    |
++-------------+---------+
+| id          | int     |
+| name        | varchar |
++-------------+---------+
+id is the primary key column for this table.
+Each row of this table indicates the ID and name of a customer.
+
++-------------+---------+
+| Column Name | Type    |
++-------------+---------+
+| id          | int     |
+| name        | varchar |
++-------------+---------+
+id is the primary key column for this table.
+Each row of this table indicates the ID and name of a customer
+
+Example 1: 
+Input:
+
+Customers table:
++----+-------+
+| id | name  |
++----+-------+
+| 1  | Joe   |
+| 2  | Henry |
+| 3  | Sam   |
+| 4  | Max   |
++----+-------+
+
+Orders table:
++----+------------+
+| id | customerId |
++----+------------+
+| 1  | 3          |
+| 2  | 1          |
++----+------------+
+
+Output:
++-----------+
+| Customers |
++-----------+
+| Henry     |
+| Max       |
++-----------+
+
+Method:
+
+select
+    Name as Customers
+from
+    Customers
+where
+    Id
+not in(
+    select CustomerId from Orders
+);
+
+-----------------------------
+
+SELECT c.Name as Customers
+FROM Customers c
+WHERE c.id not in (
+SELECT o.CustomerId FROM Orders o
+);
